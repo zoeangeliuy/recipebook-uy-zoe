@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <a href={{link}}>{{name}}</a>
+            <ul>
+                {% for item in ingredients %}
+                    <li>
+                        <p>{{item.quantity}}  {{item.name}}</p>
+                    </li>
+                {% endfor %}
+            </ul>  
+{% endblock %}
