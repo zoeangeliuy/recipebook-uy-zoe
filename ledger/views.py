@@ -8,3 +8,7 @@ class RecipesListView(ListView):
     model=Recipe
     template_name= "recipeslist.html"
 
+class RecipesDetailView(DetailView):
+    model=Recipe
+    template_name= "recipe.html"
+
