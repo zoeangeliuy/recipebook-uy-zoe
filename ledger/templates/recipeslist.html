@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-
+{% block page_title %}
+        Recipe List Page
+{% endblock %}
 {% block content %}
     {% for Recipe in object_list %}
         <a href='/recipe/{{Recipe.id}}'>Recipe {{ Recipe.name}}</a>
