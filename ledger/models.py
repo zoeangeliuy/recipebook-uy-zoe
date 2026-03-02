@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 class Ingredient(models.Model):
@@ -22,3 +23,9 @@ class RecipeIngredient(models.Model):
     quantity = models.CharField(max_length=50)
     ingredient=models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name="recipes")
     recipe=models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="ingredients")
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    bio = models.TextField(blank=True)
