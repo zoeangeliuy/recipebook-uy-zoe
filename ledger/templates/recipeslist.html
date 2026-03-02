@@ -3,10 +3,6 @@
 {% block content %}
     {% for Recipe in object_list %}
         <a href='/recipe/{{Recipe.id}}'>Recipe {{ Recipe.name}}</a>
-        <ul>
-        {% for RecipeIngredient in Recipe.ingredients.all %}
-            <li>{{ RecipeIngredient.quantity }} {{ RecipeIngredient.ingredient.name }}</li>
-        {% endfor %}
-        </ul>
+        <br>
     {% endfor %}
 {% endblock %}
