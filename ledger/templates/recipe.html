@@ -2,6 +2,7 @@
 
 {% block content %}
         <a href='/recipe/{{object.id}}'>Recipe {{object.name}}</a>
+        <p>Author: {{object.author}}</p>
         <ul>
         {% for RecipeIngredient in object.ingredients.all %}
             <li>{{ RecipeIngredient.quantity }} {{ RecipeIngredient.ingredient.name }}</li>
