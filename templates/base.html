@@ -8,6 +8,7 @@
             {% block content %}{% endblock %}
         </div>
         {% if user.is_authenticated %}
+            <br>
             <form method="POST" action="{% url 'logout' %}">
                 {% csrf_token %}
                 {{ form.as_p }}

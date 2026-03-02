@@ -14,8 +14,10 @@ class RecipeAdmin(admin.ModelAdmin):
     list_display = ('name',)
     inlines = [RecipeIngredientInline,]
 
+
 class ProfileAdmin(admin.ModelAdmin):
     model = Profile
+
 
 admin.site.register(Recipe, RecipeAdmin)
 admin.site.register(Profile, ProfileAdmin)
