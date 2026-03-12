@@ -7,8 +7,11 @@
         <p>Author: {{object.author}}</p>
         <ul>
         {% for RecipeIngredient in object.ingredients.all %}
-            <li>{{ RecipeIngredient.quantity }} {{ RecipeIngredient.ingredient.name }}</li>
+                <li>{{ RecipeIngredient.quantity }} {{ RecipeIngredient.ingredient.name }}</li>
         {% endfor %}
         </ul>
+        {% for image in object.images.all %}
+                <img src="{{ image.recipe_image.url }}" alt="{{ image.description }}">
+        {% endfor %}
         <a href='/recipes/list'>Back to List</a>
 {% endblock %}
